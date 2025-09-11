@@ -1,8 +1,3 @@
-Of course\! Here is a professional `README.md` file tailored to your Cake Price Prediction project, using the insights from your specific dataset.
-
-You can create a new file in your GitHub repository named `README.md` and paste the content below into it.
-
------
 
 # 🎂 Cake Price Prediction using Machine Learning
 
@@ -80,3 +75,4 @@ The model's performance was evaluated on the remaining 20% of the data (the test
 The **Mean Absolute Error (MAE)** indicates that, on average, the model's price predictions are off by only about **$14.88**. This is a highly accurate result considering the price range in the dataset.
 
 -----
+
