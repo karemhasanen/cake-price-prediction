@@ -1,46 +1,82 @@
-# Machine Learning Task: Cake Price Prediction
+Of course\! Here is a professional `README.md` file tailored to your Cake Price Prediction project, using the insights from your specific dataset.
 
-This task has been prepared for the Machine Learning Engineer Virtual Internship Program in Intern2Grow.
+You can create a new file in your GitHub repository named `README.md` and paste the content below into it.
 
-## Objective
+-----
 
-Your task is to build a machine learning model that can predict the price of cakes based on their features.
+# 🎂 Cake Price Prediction using Machine Learning
 
-## Dataset
+This project showcases a complete machine learning workflow to predict the price of cakes. Using a dataset that includes features like ingredient cost, size, and design complexity, a Random Forest Regressor is trained to provide accurate price estimates.
 
-You are provided with a dataset containing the following features:
+### Project Highlights
 
-- Sold_On: The day on which the cake has been sold (e.g., Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday).
-- Size: The size of the cake (e.g., small, medium, large).
-- Ingredients_Cost: The cost of the ingredients used to make the cake.
-- Design_Complexity: The complexity of the cake's design (e.g., simple, complex).
-- Time_Taken: The time taken to make the cake (in hours).
-- Price: The price of the cake.
-- Amount: The amount of similar cakes sold in the same order (Price and all other parameters are for one cake, not the whole order).
-- Gender: The gender of person ordering the cake(s).
+  - **High Accuracy**: Achieves a low Mean Absolute Error (MAE), with predictions being off by only \~$15 on average.
+  - **Full ML Pipeline**: Covers data cleaning, exploratory data analysis, feature engineering, and model evaluation.
+  - **Ethical Consideration**: Proactively removes the `Gender` feature to prevent potential bias in pricing.
+  - **Technology**: Built with Python, Scikit-learn, and Pandas.
 
-## Task Breakdown
+-----
 
-1. **Data Preparation**: Load and explore the dataset. Perform any necessary data cleaning and preprocessing tasks. This may include handling missing values, dealing with outliers, normalizing the data, encoding categorical variables, etc.
+## 📋 Table of Contents
 
-2. **Feature Selection**: Decide which features from the dataset you will use to train your model. Remember that the goal is to predict the price of the cake, so this is your target variable.
+  * [Project Objective](https://www.google.com/search?q=%23project-objective)
+  * [Dataset](https://www.google.com/search?q=%23dataset)
+  * [Methodology](https://www.google.com/search?q=%23methodology)
+  * [Results & Evaluation](https://www.google.com/search?q=%23results--evaluation)
+  * [How to Run This Project](https://www.google.com/search?q=%23how-to-run-this-project)
 
-3. **Model Selection**: Choose an appropriate machine learning algorithm for this regression task. Justify your choice.
+-----
 
-4. **Model Training**: Split the dataset into a training set and a test set. Use the training set to train your model.
+## \#\# Project Objective
 
-5. **Model Evaluation**: Use the test set to evaluate the performance of your model. You may use appropriate metrics for regression tasks such as Mean Absolute Error (MAE), Mean Squared Error (MSE), or Root Mean Squared Error (RMSE).
+The primary goal is to build a robust regression model that can accurately predict the price of a cake based on its various attributes. This serves as a practical application of machine learning for a real-world business problem.
 
-6. **Prediction**: Finally, use your trained model to predict the price of a new cake given its features.
+-----
 
-## Deliverable
+## \#\# Dataset
 
-Submit a report detailing your approach, methodology, and results. Your report should include:
+The dataset used for this project contains 4,000 entries with the following features:
 
-- An explanation of your data cleaning and preprocessing steps.
-- The features you selected and your rationale behind this selection.
-- The machine learning algorithm you chose and why you chose it.
-- The results of your model evaluation, including the metrics you used.
-- A discussion of any challenges you faced and how you overcame them.
+  - **Sold\_On**: The day of the week the cake was sold.
+  - **Size**: The size of the cake (small, medium, large).
+  - **Ingredients\_Cost**: The cost of the raw materials.
+  - **Design\_Complexity**: Whether the design is simple or complex.
+  - **Time\_Taken**: The time in hours required to bake and decorate the cake.
+  - **Amount**: The quantity of similar cakes in the same order.
+  - **Price**: The final price of the cake (the target variable).
 
-Also, submit your code files along with your report. Your code should be well-commented and easy to understand.
+-----
+
+## \#\# Methodology
+
+The project follows a structured machine learning workflow:
+
+1.  **Data Cleaning & Preprocessing**: The dataset was loaded and checked for missing values (none were found). The `Gender` column was removed as it showed no correlation with price and could introduce bias.
+
+2.  **Exploratory Data Analysis (EDA)**: Visual analysis revealed key insights:
+
+      * A very strong positive correlation (**0.91**) exists between `Ingredients_Cost` and `Price`.
+      * `Time_Taken` also has a strong positive correlation with `Price`.
+      * Prices clearly increase with `Size` and `Design_Complexity`.
+
+3.  **Feature Engineering**: Categorical features were converted into a numerical format suitable for the model:
+
+      * **Ordinal Encoding**: The `Size` feature (`small`, `medium`, `large`) was mapped to numerical values (0, 1, 2) to preserve its inherent order.
+      * **One-Hot Encoding**: Nominal features like `Sold_On` and `Design_Complexity` were converted into binary columns.
+
+4.  **Model Training**: A **Random Forest Regressor** was chosen for its high accuracy and ability to handle non-linear relationships. The model was trained on 80% of the dataset.
+
+-----
+
+## \#\# Results & Evaluation
+
+The model's performance was evaluated on the remaining 20% of the data (the test set) with impressive results:
+
+| Metric                      | Value       |
+| --------------------------- | ----------- |
+| **Mean Absolute Error (MAE)** | **\~$14.88** |
+| **Root Mean Squared Error (RMSE)** | **\~$18.84** |
+
+The **Mean Absolute Error (MAE)** indicates that, on average, the model's price predictions are off by only about **$14.88**. This is a highly accurate result considering the price range in the dataset.
+
+-----
